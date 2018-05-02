@@ -1,0 +1,132 @@
+h1 {
+  width: 23rem;
+  font-family: monospace;
+  margin: 0 auto 2rem;
+  font-size: 3rem;
+  color: #333;
+  text-align: center;
+  text-shadow: 0 0 .2rem rgba(255, 255, 255, 0.4);
+}
+
+#container {
+  width: 71.8rem;
+  overflow: hidden;
+  margin: 2.5rem auto 4rem; 
+}
+
+ul.thumbs li {
+  float: left;
+  width: 9.4rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+ul.thumbs li:last-of-type {
+margin-right: 0;
+}
+
+ul.thumbs li:first-child a:hover span {
+  left: -.3rem;
+}
+
+ul.thumbs li:first-child a:hover span::before {
+  left: 2.5rem;
+}
+
+ul.thumbs {
+  list-style: none;
+}
+
+ul.thumbs a {
+  display: block;
+  position: relative;
+  height: 5.5rem;
+  border: .4rem solid transparent;
+  font: bold 1.2rem/2.5rem monospace;
+  color: #515151;
+  text-decoration: none;
+  text-shadow: .1rem .1rem 0 rgba(255, 255, 255, 0.25), .1rem .1rem 0 rgba(0, 0, 0, 0.15);
+}
+
+ul.thumbs a:hover span {
+  position: absolute;
+  z-index: 110;
+  bottom: -3rem;
+  left: -2.2rem;
+  display: block;
+  width: 10rem;
+  height: 2.5rem;
+  text-align: center;
+  border-radius: .3rem;
+  box-shadow: 0 .1rem 0 rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to top, #fff 0%, #bcbcbc 100%);
+}
+
+ul.thumbs a:hover span::before {
+  width: 0;
+  height: 0;
+  border-bottom: .5rem solid #fff;
+  border-left: .5rem solid transparent;
+  border-right: .5rem solid transparent;
+  content: '';
+  position: absolute;
+  top: -.5rem;
+  left: 4.4rem;
+}
+
+ul.thumbs img {
+border: #333 solid .4rem;
+}
+
+ul.thumbs span {
+display: inline-block;
+margin-top: .8rem;
+}
+
+ul.slides {
+  overflow: hidden;
+  clear: both;
+  border: #333 solid .4rem;
+}
+
+ul.slides, ul.slides li, ul.slides a {
+  width: 71.8rem;
+  height: 35rem;
+  position: relative;
+}
+
+ul.slides img {
+  width: 71rem;
+  height: 35rem;
+  position: relative;
+}
+
+/* Animation for slider */
+ul.slides li {
+  position: absolute;
+  z-index: 50;
+}
+
+@keyframes slide {
+  0% {
+    left: -71rem; }
+  100% {
+    left: 0px; }
+}
+
+ul.slides li:target {
+  z-index: 100;
+  animation: slide 2s 1;
+}
+
+/* Not Target */
+@keyframes notTarget {
+  0% {
+    z-index: 75; }
+  0% {
+    z-index: 75; }
+}
+
+ul.slides li:not(:target) {
+  animation: notTarget 2.3s 1;
+}
